@@ -1,0 +1,63 @@
+// Desktop & Tablet Fontstyles
+
+@mixin desktab-fontstyle-page-header {
+  font-size: 3.3rem;
+  line-height: 4.4rem;
+  font-weight: $font-weight-bold;
+}
+
+@mixin desktab-fontstyle-section-header {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+}
+
+@mixin desktab-fontstyle-subheader {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: $font-weight-bold;
+}
+
+@mixin desktab-fontstyle-body-header {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: $font-weight-regular;
+}
+
+@mixin desktab-fontstyle-labels-buttons {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+}
+
+// Mobile fontstyles
+
+@mixin mobile-fontstyle-page-header {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: $font-weight-bold;
+}
+
+@mixin mobile-fontstyle-section-header {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+}
+
+@mixin mobile-fontstyle-subheader {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: $font-weight-bold;
+}
+
+@mixin mobile-fontstyle-body-header {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: $font-weight-regular;
+}
+
+@mixin mobile-fontstyle-labels-buttons {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+}

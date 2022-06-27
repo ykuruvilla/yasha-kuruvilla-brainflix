@@ -1,0 +1,36 @@
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  font-family: "AvenirNextLTPro";
+  color: $color-primary-brainflix-black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button,
+text,
+select {
+  font-family: inherit;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+h2,
+ul,
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+a {
+  text-decoration: none;
+}
