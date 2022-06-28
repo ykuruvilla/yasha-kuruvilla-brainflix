@@ -1,9 +1,12 @@
+@use "../partials/variables" as *;
+@use "../partials/font" as *;
+
 html {
   font-size: 0.625rem;
 }
 
 body {
-  font-family: "AvenirNextLTPro";
+  font-family: "Avenir";
   color: $color-primary-brainflix-black;
   margin: 0;
   padding: 0;

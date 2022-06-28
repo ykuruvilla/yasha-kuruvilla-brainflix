@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 // Desktop & Tablet Fontstyles
 
 @mixin desktab-fontstyle-page-header {
@@ -18,7 +20,7 @@
   font-weight: $font-weight-bold;
 }
 
-@mixin desktab-fontstyle-body-header {
+@mixin desktab-fontstyle-body-copy {
   font-size: 1.4rem;
   line-height: 2.2rem;
   font-weight: $font-weight-regular;
@@ -50,7 +52,7 @@
   font-weight: $font-weight-bold;
 }
 
-@mixin mobile-fontstyle-body-header {
+@mixin mobile-fontstyle-body-copy {
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-weight: $font-weight-regular;
