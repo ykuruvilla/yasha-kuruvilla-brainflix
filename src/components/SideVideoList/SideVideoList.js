@@ -1,6 +1,6 @@
 import React from "react";
 import SideVideo from "../SideVideo/SideVideo";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid } from "uuid";
 
 export default function SideVideoList(props) {
   // array of side videos below
@@ -8,8 +8,8 @@ export default function SideVideoList(props) {
 
   return (
     <div>
-      {props.SideVideoData.map((video) => {
-        return <SideVideo data={video} key={uuidv4()} />;
+      {props.sideVideoData.map((video) => {
+        return <SideVideo data={video} key={uuid()} />;
       })}
     </div>
   );
