@@ -5,10 +5,9 @@ const VideoPlayer = (props) => {
     <div className="video__player">
       <video
         className="main-video"
-        poster={props.currentVideo}
+        poster={props.videoLink.image}
         controls
       ></video>
-      ;
     </div>
   );
 };
