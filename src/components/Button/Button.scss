@@ -14,8 +14,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-position: 1.2rem center;
 
   &:hover {
     background-color: $color-secondary-brainflix-darkblue;
+  }
+}
+
+#button {
+  &--upload {
+    background-image: url(../../assets/icons/upload.svg);
   }
 }

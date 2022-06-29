@@ -81,14 +81,14 @@
 
     &--desktab {
       display: none;
-    }
 
-    @include screen-medium {
-      display: inline-block;
-    }
+      @include screen-medium {
+        display: inline-block;
+      }
 
-    @include screen-large {
-      display: inline-block;
+      @include screen-large {
+        display: inline-block;
+      }
     }
   }
 }

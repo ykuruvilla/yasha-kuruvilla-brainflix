@@ -18,7 +18,7 @@ const Header = () => {
           alt="Mohan muruge"
         />
       </div>
-      <Button text="UPLOAD" icon={uploadIcon} alt="Upload icon" />
+      <Button text="UPLOAD" id="button--upload" />
       <img
         className="header__image header__image--desktab"
         src={image}
