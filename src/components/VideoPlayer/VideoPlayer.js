@@ -1,3 +1,9 @@
 const VideoPlayer = (props) => {
-  return <video controls width="750" height="500"></video>;
+  return (
+    <div className="video__player">
+      <video poster="https://i.imgur.com/i6S8m7I.jpg"></video>;
+    </div>
+  );
 };
+
+export default VideoPlayer;
