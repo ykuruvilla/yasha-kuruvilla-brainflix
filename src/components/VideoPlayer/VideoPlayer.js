@@ -1,7 +1,14 @@
+import "./VideoPlayer.scss";
+
 const VideoPlayer = (props) => {
   return (
     <div className="video__player">
-      <video poster="https://i.imgur.com/i6S8m7I.jpg"></video>;
+      <video
+        className="main-video"
+        poster={props.currentVideo}
+        controls
+      ></video>
+      ;
     </div>
   );
 };
