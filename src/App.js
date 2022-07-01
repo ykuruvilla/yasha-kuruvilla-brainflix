@@ -12,21 +12,32 @@ class App extends Component {
   state = {
     videoList: VideoData,
     videoDetails: VideoDetails,
+    activeVideo: VideoDetails[0],
   };
 
-  videoClickHandler = (event) => {
-    event.preventDefault();
+  sideVideoClickHandler = (e) => {
+    let newVideoId = e.target.id;
+    const showNewVideo = this.state.videoDetails.find(
+      (obj) => obj.id === newVideoId
+    );
+
+    this.setState({ activeVideo: showNewVideo });
+    console.log(this.state.activeVideo);
   };
 
   render() {
     return (
       <div className="App">
         <Header />
-        <VideoPlayer videoLink={this.state.videoDetails[0]} />
-        <MainVideoInfo videoDetails={this.state.videoDetails[0]} />
-        <CommentForm comments={this.state.videoDetails[0].comments} />
-        <VideoCommentsList videoDetails={this.state.videoDetails[0]} />
-        <SideVideoList sideVideoData={this.state.videoList} />
+        <VideoPlayer videoLink={this.state.activeVideo} />
+        <MainVideoInfo videoDetails={this.state.activeVideo} />
+        <CommentForm comments={this.state.activeVideo.comments} />
+        <VideoCommentsList videoDetails={this.state.activeVideo} />
+        <SideVideoList
+          activeVideoId={this.state.activeVideo.id}
+          clickHandler={this.sideVideoClickHandler}
+          sideVideoData={this.state.videoList}
+        />
       </div>
     );
   }

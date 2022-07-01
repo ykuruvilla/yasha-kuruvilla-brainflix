@@ -1,5 +1,6 @@
 import React from "react";
 import avatar from "../../assets/images/mohan-muruge.jpg";
+import Button from "../Button/Button";
 
 export default function CommentForm(props) {
   return (
@@ -9,17 +10,17 @@ export default function CommentForm(props) {
         <div>
           <img src={avatar} alt="Mohan muruge" />
         </div>
+        <div className=""></div>
         <form className="comment-form">
           <label className="comment-form__label">
             JOIN THE CONVERSATION
-            <input
-              className="comment-form__label"
+            <textarea
               name="comment"
               id="comment"
               placeholder="Add a new comment"
-              type="text"
-            />
+            ></textarea>
           </label>
+          <Button text="COMMENT" id="button--comment" />
         </form>
       </div>
     </>

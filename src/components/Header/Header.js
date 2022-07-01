@@ -1,7 +1,6 @@
 import logo from "../../assets/logo/brainflix-logo.svg";
-import image from "../../assets/images/mohan-muruge.jpg";
+import avatar from "../../assets/images/mohan-muruge.jpg";
 import Button from "../Button/Button";
-import uploadIcon from "../../assets/icons/upload.svg";
 import "./Header.scss";
 
 const Header = () => {
@@ -14,14 +13,14 @@ const Header = () => {
         <input className="header__search" placeholder="Search" />
         <img
           className="header__image header__image--mobile"
-          src={image}
+          src={avatar}
           alt="Mohan muruge"
         />
       </div>
       <Button text="UPLOAD" id="button--upload" />
       <img
         className="header__image header__image--desktab"
-        src={image}
+        src={avatar}
         alt="Mohan muruge"
       />
     </header>

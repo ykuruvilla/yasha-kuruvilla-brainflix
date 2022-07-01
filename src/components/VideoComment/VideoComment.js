@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function VideoComment(props) {
-  console.log(props.data);
+  // console.log(props.data);
 
   let commentDate = new Date(props.data.timestamp);
   let date = commentDate.toLocaleDateString();
