@@ -1,5 +1,7 @@
-@use "../partials/variables" as *;
-@use "../partials/font" as *;
+@use "./mixins" as *;
+@use "./font" as *;
+@use "./breakpoints" as *;
+@use "./variables" as *;
 
 html {
   font-size: 0.625rem;
@@ -26,12 +28,35 @@ select {
   box-sizing: inherit;
 }
 
+h1,
 h2,
 ul,
 p {
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
+}
+
+h1 {
+  @include mobile-fontstyle-page-header;
+
+  @include screen-medium {
+    @include desktab-fontstyle-page-header;
+  }
+  @include screen-large {
+    @include desktab-fontstyle-page-header;
+  }
+}
+
+p {
+  @include mobile-fontstyle-body-copy;
+
+  @include screen-medium {
+    @include desktab-fontstyle-body-copy;
+  }
+  @include screen-large {
+    @include desktab-fontstyle-body-copy;
+  }
 }
 
 a {

@@ -63,3 +63,7 @@
   line-height: 2rem;
   font-weight: $font-weight-bold;
 }
+
+@mixin divider {
+  border-bottom: 1px solid $color-secondary-mercury;
+}

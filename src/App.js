@@ -30,14 +30,18 @@ class App extends Component {
       <div className="App">
         <Header />
         <VideoPlayer videoLink={this.state.activeVideo} />
-        <MainVideoInfo videoDetails={this.state.activeVideo} />
-        <CommentForm comments={this.state.activeVideo.comments} />
-        <VideoCommentsList videoDetails={this.state.activeVideo} />
-        <SideVideoList
-          activeVideoId={this.state.activeVideo.id}
-          clickHandler={this.sideVideoClickHandler}
-          sideVideoData={this.state.videoList}
-        />
+        <section className="page__lower">
+          <section className="main-video-content">
+            <MainVideoInfo videoDetails={this.state.activeVideo} />
+            <CommentForm comments={this.state.activeVideo.comments} />
+            <VideoCommentsList videoDetails={this.state.activeVideo} />
+          </section>
+          <SideVideoList
+            activeVideoId={this.state.activeVideo.id}
+            clickHandler={this.sideVideoClickHandler}
+            sideVideoData={this.state.videoList}
+          />
+        </section>
       </div>
     );
   }
