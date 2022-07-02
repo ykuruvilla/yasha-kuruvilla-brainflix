@@ -1,6 +1,7 @@
 import React from "react";
 import VideoComment from "../VideoComment/VideoComment";
 import { v4 as uuid } from "uuid";
+import "./VideoCommentsList.scss";
 
 export default function VideoCommentsList(props) {
   return (

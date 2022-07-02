@@ -6,4 +6,89 @@
 .comments__number {
   @include mobile-fontstyle-subheader;
   margin-left: 1.6rem;
+
+  @include screen-medium {
+    @include desktab-fontstyle-subheader;
+    margin-left: 3.6rem;
+  }
+}
+
+.comment-input-area {
+  display: flex;
+  padding: 1.6rem 0;
+  margin: 0 1.6rem;
+  @include divider;
+
+  @include screen-medium {
+    padding: 0;
+    margin: 2.4rem 3.6rem 0;
+    align-items: center;
+  }
+}
+
+.comment-form {
+  @include screen-medium {
+    display: flex;
+    align-items: center;
+  }
+
+  &__container {
+    margin-left: 1.6rem;
+    width: 100%;
+  }
+
+  &__label {
+    @include mobile-fontstyle-labels-buttons;
+    padding-bottom: 4px;
+    color: $color-primary-silver;
+
+    @include screen-medium {
+      @include desktab-fontstyle-labels-buttons;
+      width: 100%;
+      margin-right: 2.4rem;
+    }
+
+    @include screen-large {
+      @include desktab-fontstyle-labels-buttons;
+    }
+  }
+
+  &__input {
+    display: block;
+    resize: none;
+    font-family: inherit;
+    color: $color-primary-brainflix-black;
+    border: 1px solid $color-secondary-mercury;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 1.6rem;
+    padding: 1.2rem;
+
+    @include screen-medium {
+      margin-bottom: 2.4rem;
+    }
+
+    &:active {
+      border: 1px solid $color-primary-blue;
+      box-shadow: 0px 0px 0px 1px $color-primary-blue;
+    }
+  }
+}
+
+.comment__avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top left;
+  width: 3.6rem;
+  height: 3.6rem;
+
+  @include screen-medium {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  @include screen-large {
+    width: 4rem;
+    height: 4rem;
+  }
 }

@@ -100,6 +100,16 @@
     width: 3.6rem;
     height: 3.6rem;
 
+    @include screen-medium {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    @include screen-large {
+      width: 4rem;
+      height: 4rem;
+    }
+
     &--mobile {
       @include screen-medium {
         display: none;
