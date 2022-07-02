@@ -20,6 +20,16 @@
   &:hover {
     background-color: $color-secondary-brainflix-darkblue;
   }
+
+  @include screen-medium {
+    width: 15rem;
+    padding: 0 3.2rem;
+  }
+
+  @include screen-large {
+    width: 15rem;
+    padding: 0 3.2rem;
+  }
 }
 
 #button {

@@ -6,20 +6,20 @@ import "./Header.scss";
 const Header = () => {
   return (
     <header className="header">
-      <a href="/">
+      <a className="header__logo-link" href="/">
         <img className="header__logo" src={logo} alt="brainflix logo" />
       </a>
       <div className="header__middle-container">
         <input className="header__search" placeholder="Search" />
         <img
-          className="header__image header__image--mobile"
+          className="header__avatar header__avatar--mobile"
           src={avatar}
           alt="Mohan muruge"
         />
       </div>
       <Button text="UPLOAD" id="button--upload" />
       <img
-        className="header__image header__image--desktab"
+        className="header__avatar header__avatar--desktab"
         src={avatar}
         alt="Mohan muruge"
       />
