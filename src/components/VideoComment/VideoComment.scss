@@ -1,0 +1,44 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets";
+
+.comment {
+  &__item {
+    display: flex;
+    padding: 1.6rem 0;
+    @include divider;
+
+    @include screen-medium {
+      padding: 2.4rem 0;
+    }
+  }
+
+  &__avatar-container {
+    margin-right: 1.6rem;
+  }
+
+  &__avatar {
+    width: 3.6rem;
+    height: 3.6ren;
+    background-color: $color-secondary-mercury;
+  }
+
+  &__text-container {
+    &--upper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__text {
+    &--name {
+      font-weight: $font-weight-bold;
+    }
+
+    &--date {
+      color: $color-primary-silver;
+    }
+  }
+}

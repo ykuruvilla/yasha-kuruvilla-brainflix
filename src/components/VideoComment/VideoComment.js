@@ -1,4 +1,5 @@
 import React from "react";
+import "./VideoComment.scss";
 
 export default function VideoComment(props) {
   // console.log(props.data);

@@ -39,7 +39,6 @@
 
   &__label {
     @include mobile-fontstyle-labels-buttons;
-    padding-bottom: 4px;
     color: $color-primary-silver;
 
     @include screen-medium {
@@ -61,7 +60,7 @@
     border: 1px solid $color-secondary-mercury;
     border-radius: 4px;
     width: 100%;
-    margin-bottom: 1.6rem;
+    margin: 4px 0 1.6rem;
     padding: 1.2rem;
 
     @include screen-medium {
