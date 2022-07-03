@@ -1,1 +1,18 @@
 @use "./styles/partials/resets" as *;
+@use "./styles/partials/breakpoints" as *;
+@use "./styles/partials/mixins" as *;
+
+.page__lower {
+  @include screen-large {
+    width: 102rem;
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+.main-video-content {
+  @include screen-large {
+    flex-basis: 75%;
+    @include divider-vertical;
+  }
+}

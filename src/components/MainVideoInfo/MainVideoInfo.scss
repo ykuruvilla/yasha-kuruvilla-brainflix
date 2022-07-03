@@ -10,15 +10,25 @@
     @include screen-medium {
       margin: 3.6rem;
     }
+
+    @include screen-large {
+      margin: 3.6rem 0;
+    }
   }
 
   &__container {
     display: flex;
     align-items: center;
     padding: 1.6rem 0;
-    @include divider;
+    @include divider-horizontal;
 
     @include screen-medium {
+      justify-content: space-between;
+      padding-bottom: 0;
+      align-items: flex-end;
+    }
+
+    @include screen-large {
       justify-content: space-between;
       padding-bottom: 0;
       align-items: flex-end;
@@ -28,10 +38,15 @@
 
 .video {
   &__title {
-    @include divider;
+    @include divider-horizontal;
     padding-bottom: 1.6rem;
 
     @include screen-medium {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    @include screen-large {
       border-bottom: none;
       padding-bottom: 0;
     }
@@ -41,6 +56,10 @@
     @include screen-medium {
       display: flex;
     }
+
+    @include screen-large {
+      display: flex;
+    }
   }
 
   &__channel {
@@ -48,6 +67,12 @@
     padding-bottom: 1.6rem;
 
     @include screen-medium {
+      @include desktab-fontstyle-subheader;
+      padding-bottom: 0.8rem;
+      margin-right: 2.4rem;
+    }
+
+    @include screen-large {
       @include desktab-fontstyle-subheader;
       padding-bottom: 0.8rem;
       margin-right: 2.4rem;
@@ -64,6 +89,10 @@
     @include screen-medium {
       display: flex;
     }
+
+    @include screen-large {
+      display: flex;
+    }
   }
 
   &__views {
@@ -74,13 +103,22 @@
       padding-bottom: 0.8rem;
       margin-right: 2.4rem;
     }
+
+    @include screen-large {
+      padding-bottom: 0.8rem;
+      margin-right: 2.4rem;
+    }
   }
 
   &__views-icon {
     margin-right: 1.6rem;
 
     @include screen-medium {
-      margin-right: 8px;
+      margin-right: 0.8rem;
+    }
+
+    @include screen-large {
+      margin-right: 0.8rem;
     }
   }
 
@@ -98,15 +136,29 @@
     @include screen-medium {
       height: 2.2rem;
       object-fit: contain;
-      margin-right: 8px;
+      margin-right: 0.8rem;
+    }
+
+    @include screen-large {
+      height: 2.2rem;
+      object-fit: contain;
+      margin-right: 0.8rem;
     }
   }
 
   &__likes-number {
     color: $color-primary-silver;
+
+    @include screen-large {
+      padding-right: 3.6rem;
+    }
   }
 
   &__description {
     padding-top: 1.6rem;
+
+    @include screen-large {
+      padding-right: 2.4rem;
+    }
   }
 }

@@ -76,8 +76,9 @@
       color: $color-secondary-brainflix-darkblack;
     }
 
-    &:active {
-      border: 2px solid $color-primary-blue;
+    &:focus {
+      border: 1px solid $color-primary-blue;
+      box-shadow: 0px 0px 0px 1px $color-primary-blue;
     }
 
     @include screen-medium {

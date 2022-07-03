@@ -1,7 +1,6 @@
 import "./SideVideo.scss";
 
 const SideVideo = (props) => {
-  // console.log(props);
   return (
     <>
       <div className="side-video__item">

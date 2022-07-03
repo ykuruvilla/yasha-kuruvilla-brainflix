@@ -11,17 +11,27 @@
     @include desktab-fontstyle-subheader;
     margin-left: 3.6rem;
   }
+
+  @include screen-large {
+    margin-left: 0;
+  }
 }
 
 .comment-input-area {
   display: flex;
   padding: 1.6rem 0;
   margin: 0 1.6rem;
-  @include divider;
+  @include divider-horizontal;
 
   @include screen-medium {
     padding: 0;
     margin: 2.4rem 3.6rem 0;
+    align-items: center;
+  }
+
+  @include screen-large {
+    padding: 0 2.4rem 0 0;
+    margin: 2.4rem 0 0;
     align-items: center;
   }
 }
@@ -32,9 +42,21 @@
     align-items: center;
   }
 
+  @include screen-large {
+    display: flex;
+    align-items: center;
+  }
+
   &__container {
-    margin-left: 1.6rem;
     width: 100%;
+
+    @include screen-medium {
+      margin-left: 0.8rem;
+    }
+
+    @include screen-large {
+      margin-left: 0.8rem;
+    }
   }
 
   &__label {
@@ -43,12 +65,14 @@
 
     @include screen-medium {
       @include desktab-fontstyle-labels-buttons;
-      width: 100%;
+      flex-basis: 78%;
       margin-right: 2.4rem;
     }
 
     @include screen-large {
       @include desktab-fontstyle-labels-buttons;
+      flex-basis: 60%;
+      margin-right: 2.4rem;
     }
   }
 
@@ -67,7 +91,11 @@
       margin-bottom: 2.4rem;
     }
 
-    &:active {
+    @include screen-large {
+      margin-bottom: 2.4rem;
+    }
+
+    &:focus {
       border: 1px solid $color-primary-blue;
       box-shadow: 0px 0px 0px 1px $color-primary-blue;
     }

@@ -12,6 +12,10 @@
     @include screen-medium {
       margin-bottom: 2.4rem;
     }
+
+    @include screen-large {
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__image-container {
@@ -22,6 +26,10 @@
     height: 7rem;
 
     @include screen-medium {
+      height: 8.2rem;
+    }
+
+    @include screen-large {
       height: 8.2rem;
     }
   }
@@ -35,6 +43,10 @@
     @include screen-medium {
       height: 8.2rem;
     }
+
+    @include screen-large {
+      height: 8.2rem;
+    }
   }
 
   &__text-container {
@@ -46,6 +58,12 @@
 
     @include screen-medium {
       width: 17rem;
+      margin-left: 2rem;
+    }
+
+    @include screen-large {
+      width: 17rem;
+      margin-left: 2rem;
     }
   }
 

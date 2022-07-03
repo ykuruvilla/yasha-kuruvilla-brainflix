@@ -7,6 +7,7 @@ import VideoCommentsList from "./components/VideoCommentsList/VideoCommentsList"
 import VideoDetails from "../src/data/video-details.json";
 import MainVideoInfo from "./components/MainVideoInfo/MainVideoInfo";
 import CommentForm from "./components/CommentForm/CommentForm";
+import "./App.scss";
 
 class App extends Component {
   state = {

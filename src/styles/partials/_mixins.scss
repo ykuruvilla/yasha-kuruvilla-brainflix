@@ -64,6 +64,12 @@
   font-weight: $font-weight-bold;
 }
 
-@mixin divider {
+// Dividers
+
+@mixin divider-horizontal {
   border-bottom: 1px solid $color-secondary-mercury;
+}
+
+@mixin divider-vertical {
+  border-right: 1px solid $color-secondary-mercury;
 }
