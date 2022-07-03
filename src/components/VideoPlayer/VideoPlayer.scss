@@ -1,4 +1,20 @@
-.main-video {
-  height: 50vh;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets";
+
+.video-player {
   width: 100%;
+  height: auto;
+
+  &__container {
+    @include screen-large {
+      width: 102rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__wrapper {
+    background-color: $color-secondary-brainflix-darkblack;
+  }
 }
