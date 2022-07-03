@@ -1,6 +1,7 @@
 import React from "react";
 import SideVideo from "../SideVideo/SideVideo";
 import { v4 as uuid } from "uuid";
+import "./SideVideoList.scss";
 
 export default function SideVideoList(props) {
   const showNewVideoList = props.sideVideoData.filter(
@@ -8,7 +9,7 @@ export default function SideVideoList(props) {
   );
 
   return (
-    <div className="side-videos__container">
+    <section className="side-videos__container">
       <h3 className="side-videos__title">NEXT VIDOES</h3>
       <div className="side-videos">
         {showNewVideoList.map((video) => {
@@ -21,6 +22,6 @@ export default function SideVideoList(props) {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

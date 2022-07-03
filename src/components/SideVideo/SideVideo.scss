@@ -1,4 +1,64 @@
-.side-video__image {
-  height: 100px;
-  width: 100px;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets";
+
+.side-video {
+  &__item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.6rem;
+
+    @include screen-medium {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__image-container {
+    width: 33%;
+    max-width: 15rem;
+    background-color: $color-secondary-mercury;
+    border-radius: 4px;
+    height: 7rem;
+
+    @include screen-medium {
+      height: 8.2rem;
+    }
+  }
+
+  &__image {
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 4px;
+    width: 100%;
+
+    @include screen-medium {
+      height: 8.2rem;
+    }
+  }
+
+  &__text-container {
+    width: 67%;
+    margin-left: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include screen-medium {
+      width: 17rem;
+    }
+  }
+
+  &__title {
+    @include mobile-fontstyle-subheader;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+
+    @include screen-medium {
+      @include desktab-fontstyle-subheader;
+    }
+  }
 }
