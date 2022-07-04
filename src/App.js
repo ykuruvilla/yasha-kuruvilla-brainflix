@@ -8,12 +8,17 @@ import VideoDetails from "../src/data/video-details.json";
 import MainVideoInfo from "./components/MainVideoInfo/MainVideoInfo";
 import CommentForm from "./components/CommentForm/CommentForm";
 import "./App.scss";
+import axios from "axios";
 
+const API_URL = "https://project-2-api.herokuapp.com";
+const API_KEY = "ce5a1734-81aa-435f-8993-c52721d056ed";
+
+// console.log(VideoDetails[0]);
 class App extends Component {
   state = {
-    videoList: VideoData,
+    videoList: [],
     videoDetails: VideoDetails,
-    activeVideo: VideoDetails[0],
+    activeVideo: null,
   };
 
   sideVideoClickHandler = (e) => {
@@ -23,10 +28,33 @@ class App extends Component {
     );
 
     this.setState({ activeVideo: showNewVideo });
-    console.log(this.state.activeVideo);
   };
 
+  componentDidMount() {
+    axios
+      .get(`${API_URL}/videos?api_key=${API_KEY}`)
+      .then((response) => {
+        this.setState({
+          videoList: response.data,
+        });
+        const activeVideoId = response.data[0].id;
+        axios
+          .get(`${API_URL}/videos/${activeVideoId}?api_key=${API_KEY}`)
+          .then((response) => {
+            console.log(response.data);
+            this.setState({ activeVideo: response.data });
+          });
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
+  }
+
   render() {
+    if (!this.state.activeVideo) {
+      return <h1>Page Loading...</h1>;
+    }
+
     return (
       <div className="App">
         <Header />
