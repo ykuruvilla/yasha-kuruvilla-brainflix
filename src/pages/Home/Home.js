@@ -18,12 +18,12 @@ export default class Home extends Component {
   populateState = async () => {
     try {
       const result = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
-      const result2 = await axios.get(
+      const resultTwo = await axios.get(
         `${API_URL}/videos/${result.data[0].id}?api_key=${API_KEY}`
       );
       this.setState({
         videoList: result.data,
-        activeVideo: result2.data,
+        activeVideo: resultTwo.data,
       });
     } catch (error) {
       window.alert(error.message);
@@ -32,25 +32,9 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.populateState();
-    // axios
-    //   .get(`${API_URL}/videos?api_key=${API_KEY}`)
-    //   .then((response) => {
-    //     this.setState({
-    //       videoList: response.data,
-    //     });
-    //     const activeVideoId = response.data[0].id;
-    //     axios
-    //       .get(`${API_URL}/videos/${activeVideoId}?api_key=${API_KEY}`)
-    //       .then((response) => {
-    //         this.setState({ activeVideo: response.data });
-    //       });
-    //   })
-    //   .catch((error) => {
-    //     window.alert(error.message);
-    //   });
   }
 
-  componentDidUpdate(pP, pS) {
+  componentDidUpdate(pP) {
     if (pP.match.url !== this.props.match.url) {
       const newVideoId = this.props.match.params.videoId;
 
@@ -72,18 +56,19 @@ export default class Home extends Component {
       return <h1>Page Loading...</h1>;
     }
 
+    const activeVideoData = this.state.activeVideo;
+
     return (
       <>
-        <VideoPlayer videoLink={this.state.activeVideo} />
+        <VideoPlayer videoDetails={activeVideoData} />
         <section className="page__lower">
           <section className="main-video-content">
-            <MainVideoInfo videoDetails={this.state.activeVideo} />
-            <CommentForm comments={this.state.activeVideo.comments} />
-            <VideoCommentsList videoDetails={this.state.activeVideo} />
+            <MainVideoInfo videoDetails={activeVideoData} />
+            <CommentForm comments={activeVideoData.comments} />
+            <VideoCommentsList videoDetails={activeVideoData} />
           </section>
           <SideVideoList
-            activeVideoId={this.state.activeVideo.id}
-            clickHandler={this.sideVideoClickHandler}
+            activeVideoId={activeVideoData.id}
             sideVideoData={this.state.videoList}
           />
         </section>

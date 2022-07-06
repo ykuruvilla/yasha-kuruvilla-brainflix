@@ -1,12 +1,12 @@
 import "./VideoPlayer.scss";
 
-const VideoPlayer = (props) => {
+const VideoPlayer = ({ videoDetails }) => {
   return (
     <div className="video-player__wrapper">
       <div className="video-player__container">
         <video
           className="video-player"
-          poster={props.videoLink.image}
+          poster={videoDetails.image}
           controls
         ></video>
       </div>

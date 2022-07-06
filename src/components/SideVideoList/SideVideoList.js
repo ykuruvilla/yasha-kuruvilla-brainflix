@@ -13,13 +13,7 @@ export default function SideVideoList(props) {
       <h3 className="side-videos__title">NEXT VIDOES</h3>
       <div className="side-videos">
         {showNewVideoList.map((video) => {
-          return (
-            <SideVideo
-              clickHandler={props.clickHandler}
-              data={video}
-              key={uuid()}
-            />
-          );
+          return <SideVideo sideVideoData={video} key={uuid()} />;
         })}
       </div>
     </section>
