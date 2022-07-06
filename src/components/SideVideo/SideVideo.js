@@ -8,11 +8,6 @@ const SideVideo = (props) => {
         <div className="side-video__image-container">
           <Link to={`/video/${props.data.id}`}>
             <img
-              onClick={(e) => {
-                props.clickHandler(e);
-                console.log(e);
-              }}
-              id={props.data.id}
               className="side-video__image"
               src={props.data.image}
               alt={props.data.title}

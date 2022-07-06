@@ -50,16 +50,22 @@ export default class Home extends Component {
     //   });
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate(pP, pS) {
+    if (pP.match.url !== this.props.match.url) {
+      const newVideoId = this.props.match.params.videoId;
 
-  sideVideoClickHandler = (e) => {
-    let newVideoId = e.target.id;
-    axios
-      .get(`${API_URL}/videos/${newVideoId}?api_key=${API_KEY}`)
-      .then((response) => {
-        this.setState({ activeVideo: response.data });
-      });
-  };
+      if (!newVideoId) {
+        this.populateState();
+        return;
+      }
+
+      axios
+        .get(`${API_URL}/videos/${newVideoId}?api_key=${API_KEY}`)
+        .then((response) => {
+          this.setState({ activeVideo: response.data });
+        });
+    }
+  }
 
   render() {
     if (!this.state.activeVideo) {

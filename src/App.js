@@ -13,15 +13,21 @@ class App extends Component {
         <Switch>
           {/* TODO: ASK ABOUT REDIRECT I DONT UNDERSTAND */}
           <Redirect from="/home" to="/" />
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => {
+              return <Home {...routerProps} />;
+            }}
+          />
           <Route path="/upload" component={Upload} />
-          {/* <Route
+          <Route
             path="/video/:videoId"
             render={(routerProps) => {
               return <Home {...routerProps} />;
             }}
-          /> */}
-          <Route path="/video/:videoId" component={Home} />
+          />
+          {/* <Route path="/video/:videoId" component={Home} /> */}
         </Switch>
       </div>
     );
