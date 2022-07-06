@@ -1,21 +1,23 @@
 import "./SideVideo.scss";
+import { Link } from "react-router-dom";
 
 const SideVideo = (props) => {
   return (
     <>
       <div className="side-video__item">
         <div className="side-video__image-container">
-          <a href="#">
+          <Link to={`/video/${props.data.id}`}>
             <img
               onClick={(e) => {
                 props.clickHandler(e);
+                console.log(e);
               }}
               id={props.data.id}
               className="side-video__image"
               src={props.data.image}
               alt={props.data.title}
             />
-          </a>
+          </Link>
         </div>
         <div className="side-video__text-container">
           <h3 className="side-video__title">{props.data.title}</h3>
