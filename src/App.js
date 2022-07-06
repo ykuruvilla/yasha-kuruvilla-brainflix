@@ -2,7 +2,6 @@ import { Component } from "react";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
-import SideVideoList from "./components/SideVideoList/SideVideoList";
 import "./App.scss";
 import { Route, Switch, Redirect } from "react-router-dom";
 
@@ -13,8 +12,8 @@ class App extends Component {
         <Header />
         <Switch>
           {/* TODO: ASK ABOUT REDIRECT I DONT UNDERSTAND */}
-          {/* <Redirect from="/home" to="/" /> */}
-          <Route path="/home" exact component={Home} />
+          <Redirect from="/home" to="/" />
+          <Route path="/" exact component={Home} />
           <Route path="/upload" component={Upload} />
           {/* <Route
             path="/video/:videoId"

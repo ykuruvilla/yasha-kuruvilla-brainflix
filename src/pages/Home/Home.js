@@ -15,24 +15,42 @@ export default class Home extends Component {
     activeVideo: null,
   };
 
-  componentDidMount() {
-    axios
-      .get(`${API_URL}/videos?api_key=${API_KEY}`)
-      .then((response) => {
-        this.setState({
-          videoList: response.data,
-        });
-        const activeVideoId = response.data[0].id;
-        axios
-          .get(`${API_URL}/videos/${activeVideoId}?api_key=${API_KEY}`)
-          .then((response) => {
-            this.setState({ activeVideo: response.data });
-          });
-      })
-      .catch((error) => {
-        window.alert(error.message);
+  populateState = async () => {
+    try {
+      const result = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+      const result2 = await axios.get(
+        `${API_URL}/videos/${result.data[0].id}?api_key=${API_KEY}`
+      );
+      this.setState({
+        videoList: result.data,
+        activeVideo: result2.data,
       });
+    } catch (error) {
+      window.alert(error.message);
+    }
+  };
+
+  componentDidMount() {
+    this.populateState();
+    // axios
+    //   .get(`${API_URL}/videos?api_key=${API_KEY}`)
+    //   .then((response) => {
+    //     this.setState({
+    //       videoList: response.data,
+    //     });
+    //     const activeVideoId = response.data[0].id;
+    //     axios
+    //       .get(`${API_URL}/videos/${activeVideoId}?api_key=${API_KEY}`)
+    //       .then((response) => {
+    //         this.setState({ activeVideo: response.data });
+    //       });
+    //   })
+    //   .catch((error) => {
+    //     window.alert(error.message);
+    //   });
   }
+
+  componentDidUpdate() {}
 
   sideVideoClickHandler = (e) => {
     let newVideoId = e.target.id;
