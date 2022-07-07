@@ -27,7 +27,6 @@ class App extends Component {
               return <Home {...routerProps} />;
             }}
           />
-          {/* <Route path="/video/:videoId" component={Home} /> */}
         </Switch>
       </div>
     );

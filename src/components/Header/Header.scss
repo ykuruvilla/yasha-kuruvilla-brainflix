@@ -93,6 +93,18 @@
     }
   }
 
+  &__button-link {
+    width: 100%;
+
+    @include screen-medium {
+      width: fit-content;
+    }
+
+    @include screen-large {
+      width: fit-content;
+    }
+  }
+
   &__avatar {
     border-radius: 50%;
     object-fit: cover;

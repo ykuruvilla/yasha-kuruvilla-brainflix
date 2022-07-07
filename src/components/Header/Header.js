@@ -1,7 +1,7 @@
 import logo from "../../assets/logo/brainflix-logo.svg";
 import avatar from "../../assets/images/mohan-muruge.jpg";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
@@ -20,9 +20,9 @@ const Header = () => {
           alt="Mohan muruge"
         />
       </div>
-      <Link to="/upload">
+      <NavLink to="/upload" className="header__button-link">
         <Button text="UPLOAD" id="button--upload" />
-      </Link>
+      </NavLink>
       <img
         className="header__avatar header__avatar--desktab"
         src={avatar}
