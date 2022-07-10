@@ -1,7 +1,7 @@
 import React from "react";
 import likesIcon from "../../assets/icons/likes.svg";
 import viewsIcon from "../../assets/icons/views.svg";
-import CreateDate from "../../CreateDate";
+import CreateDate from "../../utilities/CreateDate";
 import "./MainVideoInfo.scss";
 
 export default function MainVideoInfo({ videoDetails }) {
