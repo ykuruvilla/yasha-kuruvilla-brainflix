@@ -11,7 +11,7 @@
   @include screen-medium {
     flex-direction: row;
     justify-content: center;
-    margin: 3.6rem;
+    margin: 0 3.6rem;
   }
 
   @include screen-large {
@@ -90,6 +90,18 @@
       width: 24rem;
       height: 4rem;
       padding: 1.6rem 1.6rem 1.6rem 3.2rem;
+    }
+  }
+
+  &__button-link {
+    width: 100%;
+
+    @include screen-medium {
+      width: fit-content;
+    }
+
+    @include screen-large {
+      width: fit-content;
     }
   }
 

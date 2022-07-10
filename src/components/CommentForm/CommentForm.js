@@ -3,10 +3,10 @@ import avatar from "../../assets/images/mohan-muruge.jpg";
 import Button from "../Button/Button";
 import "./CommentForm.scss";
 
-export default function CommentForm(props) {
+export default function CommentForm({ comments }) {
   return (
     <>
-      <p className="comments__number">{props.comments.length} comments</p>
+      <p className="comments__number">{comments.length} comments</p>
       <div className="comment-input-area">
         <div className="comment__avatar-container">
           <img className="comment__avatar" src={avatar} alt="Mohan muruge" />

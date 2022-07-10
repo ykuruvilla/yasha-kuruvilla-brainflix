@@ -1,0 +1,142 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../components/CommentForm/CommentForm.scss" as *;
+
+.upload {
+  &__wrapper {
+    border-top: 1px solid $color-secondary-mercury;
+  }
+
+  &__heading {
+    display: inline-block;
+    margin: 2.4rem 1.6rem;
+
+    @include screen-medium {
+      margin: 2.4rem 3.6rem;
+    }
+
+    @include screen-large {
+      display: block;
+      margin-left: calc((100% - 102rem) / 2);
+    }
+  }
+
+  &__container {
+    margin: 0 1.6rem 1.6rem;
+
+    @include screen-medium {
+      margin: 0 3.6rem;
+      border-top: 1px solid $color-secondary-mercury;
+    }
+
+    @include screen-large {
+      width: 102rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__form-container {
+    @include screen-medium {
+      margin-top: 1.6rem;
+      @include divider-horizontal;
+    }
+
+    @include screen-large {
+      display: flex;
+      @include divider-horizontal;
+    }
+  }
+
+  &__image-container {
+    border-radius: 4px;
+    margin-bottom: 1.6rem;
+
+    @include screen-medium {
+      width: 50%;
+    }
+
+    @include screen-large {
+      flex-basis: 29%;
+      margin-right: 3.6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-title {
+    @include mobile-fontstyle-labels-buttons;
+    color: $color-primary-silver;
+    margin-bottom: 4px;
+
+    @include screen-medium {
+      @include desktab-fontstyle-labels-buttons;
+    }
+    @include screen-large {
+      @include desktab-fontstyle-labels-buttons;
+    }
+  }
+
+  &__image-preview {
+    border-radius: 4px;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+  &__form {
+    @include screen-large {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-basis: 74%;
+    }
+  }
+
+  &__form-label {
+    @include mobile-fontstyle-labels-buttons;
+    color: $color-primary-silver;
+  }
+
+  &__form-input {
+    display: block;
+    font-family: inherit;
+    color: $color-secondary-brainflix-darkblack;
+    min-height: 3.6rem;
+    padding: 1.2rem;
+    background-color: $color-secondary-alabaster;
+    border: 1px solid $color-secondary-mercury;
+    border-radius: 4px;
+    width: 100%;
+    margin: 4px 0 1.6rem;
+
+    @include screen-medium {
+      margin-bottom: 2.4rem;
+    }
+
+    @include screen-large {
+      margin-bottom: 2.4rem;
+    }
+
+    &::placeholder {
+      color: $color-primary-brainflix-black;
+    }
+
+    &:focus {
+      border: 1px solid $color-primary-blue;
+      box-shadow: 0px 0px 0px 1px $color-primary-blue;
+    }
+  }
+
+  &__form-buttons {
+    @include screen-medium {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include screen-large {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
