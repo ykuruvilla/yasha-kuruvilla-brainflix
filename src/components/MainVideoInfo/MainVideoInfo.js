@@ -1,18 +1,17 @@
 import React from "react";
 import likesIcon from "../../assets/icons/likes.svg";
 import viewsIcon from "../../assets/icons/views.svg";
+import CreateDate from "../../CreateDate";
 import "./MainVideoInfo.scss";
 
 export default function MainVideoInfo({ videoDetails }) {
-  let commentDate = new Date(videoDetails.timestamp);
-  let date = commentDate.toLocaleDateString();
   return (
     <div className="video-details__wrapper">
       <h1 className="video__title">{videoDetails.title}</h1>
       <div className="video-details__container">
         <div className="video__info">
           <p className="video__channel">By {videoDetails.channel}</p>
-          <p className="video__date">{date}</p>
+          <p className="video__date">{CreateDate(videoDetails.timestamp)}</p>
         </div>
         <div className="video__metrics">
           <div className="video__views">

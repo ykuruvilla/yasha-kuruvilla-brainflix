@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import "./Upload.scss";
-import preview from "../../assets/images/upload-video-preview.jpg";
+import videoPreview from "../../assets/images/upload-video-preview.jpg";
 
 export default function Upload() {
   return (
@@ -12,7 +12,7 @@ export default function Upload() {
           <div className="upload__image-container">
             <h3 className="upload__image-title">VIDEO THUMBNAIL</h3>
             <img
-              src={preview}
+              src={videoPreview}
               alt="Upload image preview"
               className="upload__image-preview"
             />

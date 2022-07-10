@@ -1,0 +1,42 @@
+@use "./mixins" as *;
+@use "./font" as *;
+@use "./breakpoints" as *;
+@use "./variables" as *;
+
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  font-family: "Avenir";
+  color: $color-primary-brainflix-black;
+}
+
+input,
+button,
+text,
+select {
+  font-family: inherit;
+}
+
+h1 {
+  @include mobile-fontstyle-page-header;
+
+  @include screen-medium {
+    @include desktab-fontstyle-page-header;
+  }
+  @include screen-large {
+    @include desktab-fontstyle-page-header;
+  }
+}
+
+p {
+  @include mobile-fontstyle-body-copy;
+
+  @include screen-medium {
+    @include desktab-fontstyle-body-copy;
+  }
+  @include screen-large {
+    @include desktab-fontstyle-body-copy;
+  }
+}

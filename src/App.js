@@ -11,7 +11,6 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          {/* TODO: ASK ABOUT REDIRECT I DONT UNDERSTAND */}
           <Redirect from="/home" to="/" />
           <Route
             path="/"
