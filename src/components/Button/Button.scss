@@ -15,6 +15,7 @@
   align-items: center;
   background-repeat: no-repeat;
   background-position: 1.2rem center;
+  cursor: pointer;
 
   &:hover {
     background-color: $color-secondary-brainflix-darkblue;
@@ -46,5 +47,14 @@
     @include screen-large {
       flex-basis: 40%;
     }
+  }
+
+  &--publish {
+    background-image: url(../../assets/icons/upload.svg);
+  }
+
+  &--cancel {
+    background-color: $color-primary-white;
+    color: $color-primary-blue;
   }
 }
