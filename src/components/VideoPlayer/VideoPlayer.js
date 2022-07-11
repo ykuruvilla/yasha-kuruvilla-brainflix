@@ -2,7 +2,7 @@ import "./VideoPlayer.scss";
 
 const VideoPlayer = ({ videoDetails }) => {
   return (
-    <div className="video-player__wrapper">
+    <section className="video-player__wrapper">
       <div className="video-player__container">
         <video
           className="video-player"
@@ -10,7 +10,7 @@ const VideoPlayer = ({ videoDetails }) => {
           controls
         ></video>
       </div>
-    </div>
+    </section>
   );
 };
 
