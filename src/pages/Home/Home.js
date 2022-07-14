@@ -6,7 +6,8 @@ import VideoCommentsList from "../../components/VideoCommentsList/VideoCommentsL
 import SideVideoList from "../../components/SideVideoList/SideVideoList";
 import axios from "axios";
 
-const API_URL = "https://project-2-api.herokuapp.com";
+// const API_URL = "https://project-2-api.herokuapp.com";
+const API_URL = "http://localhost:5050";
 const API_KEY = "ce5a1734-81aa-435f-8993-c52721d056ed";
 
 export default class Home extends Component {
@@ -17,9 +18,9 @@ export default class Home extends Component {
 
   populateState = async () => {
     try {
-      const result = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+      const result = await axios.get(`${API_URL}/videos`);
       const resultTwo = await axios.get(
-        `${API_URL}/videos/${result.data[0].id}?api_key=${API_KEY}`
+        `${API_URL}/videos/${result.data[0].id}`
       );
       this.setState({
         videoList: result.data,
@@ -43,11 +44,9 @@ export default class Home extends Component {
         return;
       }
 
-      axios
-        .get(`${API_URL}/videos/${newVideoId}?api_key=${API_KEY}`)
-        .then((response) => {
-          this.setState({ activeVideo: response.data });
-        });
+      axios.get(`${API_URL}/videos/${newVideoId}`).then((response) => {
+        this.setState({ activeVideo: response.data });
+      });
     }
   }
 
