@@ -6,8 +6,8 @@ import VideoCommentsList from "../../components/VideoCommentsList/VideoCommentsL
 import SideVideoList from "../../components/SideVideoList/SideVideoList";
 import axios from "axios";
 
-const API_URL = "http://localhost:5050";
 const API_KEY = "ce5a1734-81aa-435f-8993-c52721d056ed";
+const API_URL = "http://localhost:5500";
 
 export default class Home extends Component {
   state = {
