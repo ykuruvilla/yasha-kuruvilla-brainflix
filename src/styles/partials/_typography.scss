@@ -40,3 +40,7 @@ p {
     @include desktab-fontstyle-body-copy;
   }
 }
+
+a {
+  text-decoration: none;
+}
