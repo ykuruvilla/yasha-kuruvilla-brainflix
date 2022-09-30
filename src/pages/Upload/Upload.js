@@ -18,7 +18,6 @@ const Upload = () => {
       return;
     }
     const API_URL = "http://localhost:5500";
-    event.preventDefault();
     history.push("/");
     axios
       .post(`${API_URL}/videos`, { title: title, description: description })
