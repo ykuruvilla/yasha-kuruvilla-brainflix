@@ -4,6 +4,10 @@ import { v4 as uuid } from "uuid";
 import "./SideVideoList.scss";
 
 export default function SideVideoList(props) {
+  if (!props.sideVideoData) {
+    return <p>OPage Loading...</p>;
+  }
+
   const showNewVideoList = props.sideVideoData.filter(
     (obj) => obj.id !== props.activeVideoId
   );

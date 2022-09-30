@@ -1,13 +1,13 @@
 import React from "react";
-import Button from "../../components/Button/Button";
 import "./Upload.scss";
 import videoPreview from "../../assets/images/upload-video-preview.jpg";
-import { Link, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const Upload = () => {
-  const history = useHistory();
-  const [formValues, setFormValues] = React.useState({});
+  const params = useParams();
+
+  console.log(params);
 
   const handleSubmit = (event) => {
     const title = event.target.title.value;
@@ -18,18 +18,18 @@ const Upload = () => {
       return;
     }
     const API_URL = "http://localhost:5500";
-    history.push("/");
+    // history.push("/");
     axios
       .post(`${API_URL}/videos`, { title: title, description: description })
       .then((response) => {
         console.log(response);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(`Error: ${err}`);
       });
   };
   const handleCancel = () => {
-    history.push("/");
+    // history.push("/");
   };
 
   return (
@@ -41,7 +41,7 @@ const Upload = () => {
             <h3 className="upload__image-title">VIDEO THUMBNAIL</h3>
             <img
               src={videoPreview}
-              alt="Upload image preview"
+              alt="Upload preview"
               className="upload__image-preview"
             />
           </div>
