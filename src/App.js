@@ -5,31 +5,29 @@ import Upload from "./pages/Upload/Upload";
 import "./App.scss";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Switch>
-          <Redirect from="/home" to="/" />
-          <Route
-            path="/"
-            exact
-            render={(routerProps) => {
-              return <Home {...routerProps} />;
-            }}
-          />
-          <Route path="/upload" component={Upload} />
-          <Route
-            path="/video/:videoId"
-            render={(routerProps) => {
-              return <Home {...routerProps} />;
-            }}
-          />
-        </Switch>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
+      <Switch>
+        <Redirect from="/home" to="/" />
+        <Route
+          path="/"
+          exact
+          render={(routerProps) => {
+            return <Home {...routerProps} />;
+          }}
+        />
+        <Route path="/upload" component={Upload} />
+        <Route
+          path="/video/:videoId"
+          render={(routerProps) => {
+            return <Home {...routerProps} />;
+          }}
+        />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;
